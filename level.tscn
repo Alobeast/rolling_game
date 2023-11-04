@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c11pnyae0xwmj"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_g6wxi"]
+[ext_resource type="PackedScene" uid="uid://ditsnk5lth3xo" path="res://joint.tscn" id="2_6jcl6"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_g6wxi")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 534.0
+offset_top = 302.0
+offset_right = 799.0
+offset_bottom = 384.0
+text = "ROLL!"
+
+[node name="Joint" parent="." instance=ExtResource("2_6jcl6")]
+position = Vector2(642, 548)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

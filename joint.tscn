@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ditsnk5lth3xo"]
+
+[ext_resource type="Script" path="res://joint.gd" id="1_mdlyk"]
+[ext_resource type="Texture2D" uid="uid://dhxcaqj34sy41" path="res://asset/joint.jpg" id="1_u3kl7"]
+[ext_resource type="Texture2D" uid="uid://retxq0e3yiej" path="res://asset/keyboard_key_a.png" id="2_ima0x"]
+[ext_resource type="Texture2D" uid="uid://c2hv8eatp2mdh" path="res://asset/keyboard_key_d.png" id="3_m622e"]
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="5_ml30h"]
+
+[node name="Joint" type="Node2D"]
+script = ExtResource("1_mdlyk")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(1.99998, 66)
+scale = Vector2(0.755782, 0.774038)
+texture = ExtResource("1_u3kl7")
+
+[node name="A_Button" type="Sprite2D" parent="."]
+position = Vector2(-223, -354.5)
+scale = Vector2(0.738281, 0.751953)
+texture = ExtResource("2_ima0x")
+
+[node name="D_Button" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.490196)
+position = Vector2(176.5, -352.5)
+scale = Vector2(0.822266, 0.759766)
+texture = ExtResource("3_m622e")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("5_ml30h")
